@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/utils/app_assests.dart';
 import 'package:islami_app/ui/utils/colors.dart';
-import 'package:islami_app/ui/utils/styles.dart';
-import 'package:islami_app/ui/widget/custom_text_field.dart';
-import 'package:islami_app/ui/widget/most_recent.dart';
+import 'package:islami_app/ui/widget/custom_quran.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -90,29 +88,6 @@ class _HomeState extends State<Home> {
 
       label: label,
       backgroundColor: Appcolor.gold,
-    );
-  }
-}
-
-class CustomQuran extends StatelessWidget {
-  const CustomQuran({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 30, left: 28, right: 28),
-            child: Image.asset(AppAssests.header),
-          ),
-          CustomTerxtFiels(),
-          SizedBox(height: 20),
-          Expanded(flex: 4, child: MostRecently()),
-          Spacer(flex: 7),
-        ],
-      ),
     );
   }
 }

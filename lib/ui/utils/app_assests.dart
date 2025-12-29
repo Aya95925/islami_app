@@ -34,4 +34,5 @@ abstract class AppAssests {
   static const String header = '${baseUrl}img_header.png';
   static const String quranSvgrepo = '${baseUrl}quran-svgrepo-com 1.png';
   static const String imageMostRecent = '${baseUrl}img_most_recent.png';
+  static const String groub = '${baseUrl}Group.png';
 }
