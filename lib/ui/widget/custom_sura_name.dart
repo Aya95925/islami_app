@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/model/sura_dm.dart';
 import 'package:islami_app/ui/utils/app_assests.dart';
 import 'package:islami_app/ui/utils/colors.dart';
 import 'package:islami_app/ui/utils/styles.dart';
 
 class CustomSuraName extends StatelessWidget {
-  const CustomSuraName({super.key});
-
+  const CustomSuraName({super.key, required this.sura});
+  final SuraDm sura;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,17 +21,21 @@ class CustomSuraName extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-            child: Text('114', style: AppStyle.white16bold),
+            child: Text(sura.index.toString(), style: AppStyle.white16bold),
           ),
           SizedBox(width: 20),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Al-Fatiha', style: AppStyle.white20Bold),
-              Text('7 Verses  ', style: AppStyle.white16bold),
+              Text(sura.englishName, style: AppStyle.white20Bold),
+              Text(
+                '${sura.ayaCount.toString()} Verses',
+                style: AppStyle.white16bold,
+              ),
             ],
           ),
           Spacer(),
-          Text('الفاتحه', style: AppStyle.white20Bold),
+          Text(sura.arabicName, style: AppStyle.white20Bold),
           Divider(color: Appcolor.white, height: 10),
         ],
       ),

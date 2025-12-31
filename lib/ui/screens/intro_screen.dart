@@ -48,10 +48,6 @@ class _IntroScreenState extends State<IntroScreen> {
           'You can listen to the Holy Quran Radio through the application for free and easily',
     ),
   ];
-  // @override
-  // void initState() {
-  //   super.initState();
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +59,12 @@ class _IntroScreenState extends State<IntroScreen> {
           children: [
             Expanded(
               child: PageView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                onPageChanged: (index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
                 controller: controller,
                 itemCount: intro.length,
                 itemBuilder: (context, index) {
@@ -75,6 +77,7 @@ class _IntroScreenState extends State<IntroScreen> {
               child: CustomRowContainSmoothPageIndecator(
                 controller: controller,
                 intro: intro,
+                currentIndex: currentIndex,
               ),
             ),
           ],

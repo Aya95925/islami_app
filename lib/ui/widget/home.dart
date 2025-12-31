@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/ui/utils/app_assests.dart';
 import 'package:islami_app/ui/utils/colors.dart';
 import 'package:islami_app/ui/widget/custom_quran.dart';
+import 'package:islami_app/ui/widget/sebha_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
-
   @override
   State<Home> createState() => _HomeState();
 }
@@ -15,8 +15,8 @@ class _HomeState extends State<Home> {
 
   List<Widget> page = [
     CustomQuran(),
-    Center(child: Container(color: Colors.red)),
     Center(child: Container(color: Colors.black)),
+    SebhaScreen(),
     Center(child: Container(color: Appcolor.brown)),
     Center(child: Container(color: Colors.blue)),
   ];

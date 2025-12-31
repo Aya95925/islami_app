@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/ui/utils/constant.dart';
 import 'package:islami_app/ui/utils/styles.dart';
 import 'package:islami_app/ui/widget/custom_sura_name.dart';
 
@@ -14,10 +15,10 @@ class SuraName extends StatelessWidget {
         SizedBox(height: 15),
         Expanded(
           child: ListView.builder(
-            itemCount: 15,
+            itemCount: suraList.length,
             padding: EdgeInsets.all(0),
             itemBuilder: (context, index) {
-              return CustomSuraName();
+              return CustomSuraName(sura: suraList[index]);
             },
           ),
         ),

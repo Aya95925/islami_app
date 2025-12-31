@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/utils/app_assests.dart';
 import 'package:islami_app/ui/widget/custom_text_field.dart';
-import 'package:islami_app/ui/widget/most_recent.dart';
 import 'package:islami_app/ui/widget/sura_name.dart';
 
 class CustomQuran extends StatelessWidget {
@@ -19,7 +18,7 @@ class CustomQuran extends StatelessWidget {
           ),
           CustomTerxtFiels(),
           SizedBox(height: 20),
-          Expanded(flex: 4, child: MostRecently()),
+          // Expanded(flex: 4, child: MostRecently()),
           SizedBox(height: 10),
           Expanded(flex: 7, child: SuraName()),
         ],

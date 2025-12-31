@@ -22,6 +22,11 @@ abstract class AppStyle {
     fontWeight: FontWeight.bold,
     color: Appcolor.white,
   );
+  static const TextStyle white36bold = TextStyle(
+    fontSize: 36,
+    fontWeight: FontWeight.bold,
+    color: Appcolor.white,
+  );
   static const TextStyle white20Bold = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
