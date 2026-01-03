@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/model/sura_dm.dart';
 import 'package:islami_app/ui/utils/app_assests.dart';
 import 'package:islami_app/ui/utils/colors.dart';
+import 'package:islami_app/ui/widget/custom_hadith.dart';
 import 'package:islami_app/ui/widget/custom_quran.dart';
 import 'package:islami_app/ui/widget/sebha_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,10 +15,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int currentIndex = 0;
+  late SuraDm suraDm;
 
   List<Widget> page = [
     CustomQuran(),
-    Center(child: Container(color: Colors.black)),
+    CustomHadith(),
     SebhaScreen(),
     Center(child: Container(color: Appcolor.brown)),
     Center(child: Container(color: Colors.blue)),
@@ -89,5 +93,14 @@ class _HomeState extends State<Home> {
       label: label,
       backgroundColor: Appcolor.gold,
     );
+  }
+
+  LoadDataInSharedPrefrence() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setStringList('sura_list', <String>[suraDm.index.toString()]);
+  }
+
+  ReadDataFromSharedprefrence() {
+    // final List<String>? items = prefs.getStringList('sura_list');
   }
 }

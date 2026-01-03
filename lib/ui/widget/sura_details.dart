@@ -50,6 +50,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                   suraContent,
                   style: AppStyle.gold20Bold.copyWith(fontSize: 24),
                   textDirection: TextDirection.rtl,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
@@ -73,7 +74,6 @@ class _SuraDetailsState extends State<SuraDetails> {
       suraLines[i] += ' [ ${i + 1} ] ';
     }
     suraContent = suraLines.join();
-    print(suraContent);
     setState(() {});
   }
 }

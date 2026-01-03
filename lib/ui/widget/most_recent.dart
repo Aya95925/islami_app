@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/model/sura_dm.dart';
 import 'package:islami_app/ui/utils/styles.dart';
 import 'package:islami_app/ui/widget/custom_container_most_recent.dart';
 
 class MostRecently extends StatelessWidget {
-  const MostRecently({super.key});
-
+  const MostRecently({super.key, required this.suraDm});
+  final SuraDm suraDm;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,7 +18,7 @@ class MostRecently extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 4,
             itemBuilder: (context, index) {
-              return CustomContainerMostRecent();
+              return CustomContainerMostRecent(suradm: suraDm);
             },
           ),
         ),

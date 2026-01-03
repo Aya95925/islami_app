@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/model/sura_dm.dart';
 import 'package:islami_app/ui/utils/app_assests.dart';
 import 'package:islami_app/ui/utils/colors.dart';
 import 'package:islami_app/ui/utils/styles.dart';
 
 class CustomContainerMostRecent extends StatelessWidget {
-  const CustomContainerMostRecent({super.key});
-
+  const CustomContainerMostRecent({super.key, required this.suradm});
+  final SuraDm suradm;
   @override
   Widget build(BuildContext context) {
     return Container(

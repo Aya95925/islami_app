@@ -36,5 +36,6 @@ abstract class AppAssests {
   static const String imageMostRecent = '${baseUrl}img_most_recent.png';
   static const String groub = '${baseUrl}Group.png';
   static const String gradient = '${baseUrl}taj-mahal-agra-india 2 (1).png';
-  static const String sebhapng = '${baseUrl}Sebha.png';
+  static const String sebhaBody = '${baseUrl}SebhaBody 1.png';
+  static const String mask = '${baseUrl}Mask group (1).png';
 }
