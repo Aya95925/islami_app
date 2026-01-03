@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/model/introduction.dart';
+import 'package:islami_app/ui/screens/home_screens.dart';
 import 'package:islami_app/ui/utils/app_assests.dart';
 import 'package:islami_app/ui/utils/colors.dart';
 import 'package:islami_app/ui/widget/custom_intro_screen.dart';
 import 'package:islami_app/ui/widget/custom_row_contain_smooth_page_indecator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -48,6 +50,31 @@ class _IntroScreenState extends State<IntroScreen> {
           'You can listen to the Holy Quran Radio through the application for free and easily',
     ),
   ];
+  Future<void> completeIntro() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('hasSeenIntro', true);
+
+    if (!mounted) return;
+
+    Navigator.pushReplacementNamed(context, HomeScreens.homeScreen);
+  }
+
+  void onNextPressed() {
+    if (currentIndex < intro.length - 1) {
+      controller.nextPage(
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
+    } else {
+      completeIntro();
+    }
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +105,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 controller: controller,
                 intro: intro,
                 currentIndex: currentIndex,
+                onTap: onNextPressed,
               ),
             ),
           ],
