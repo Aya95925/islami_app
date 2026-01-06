@@ -28,7 +28,7 @@ class CustomContainerMostRecent extends StatelessWidget {
                 Text(suradm.englishName, style: AppStyle.black24Bold),
                 Text(suradm.arabicName, style: AppStyle.black24Bold),
                 Text(
-                  '${suradm.ayaCount.toString()}verses',
+                  '${suradm.ayaCount.toString()} verses',
                   style: AppStyle.black14Bold,
                 ),
               ],

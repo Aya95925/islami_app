@@ -4,8 +4,8 @@ import 'package:islami_app/ui/utils/colors.dart';
 import 'package:islami_app/ui/utils/styles.dart';
 
 class CustomTerxtFiels extends StatelessWidget {
-  const CustomTerxtFiels({super.key});
-
+  const CustomTerxtFiels({super.key, this.onChanged});
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     final OutlineInputBorder border = OutlineInputBorder(
@@ -13,6 +13,7 @@ class CustomTerxtFiels extends StatelessWidget {
       borderSide: BorderSide(color: Appcolor.gold),
     );
     return TextField(
+      onChanged: onChanged,
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         focusedBorder: border,
