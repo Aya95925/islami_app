@@ -95,12 +95,8 @@ class _HomeState extends State<Home> {
     );
   }
 
-  LoadDataInSharedPrefrence() async {
+  Future<void> loadDataInSharedPrefrence() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setStringList('sura_list', <String>[suraDm.index.toString()]);
-  }
-
-  ReadDataFromSharedprefrence() {
-    // final List<String>? items = prefs.getStringList('sura_list');
   }
 }

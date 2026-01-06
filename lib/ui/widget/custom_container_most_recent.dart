@@ -25,9 +25,12 @@ class CustomContainerMostRecent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Al-Anbiya', style: AppStyle.black24Bold),
-                Text('الأنبياء', style: AppStyle.black24Bold),
-                Text('112 Verses', style: AppStyle.black14Bold),
+                Text(suradm.englishName, style: AppStyle.black24Bold),
+                Text(suradm.arabicName, style: AppStyle.black24Bold),
+                Text(
+                  '${suradm.ayaCount.toString()}verses',
+                  style: AppStyle.black14Bold,
+                ),
               ],
             ),
           ),
