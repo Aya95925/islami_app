@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/model/sura_dm.dart';
-import 'package:islami_app/ui/utils/constant.dart';
 import 'package:islami_app/ui/utils/styles.dart';
 import 'package:islami_app/ui/widget/custom_sura_name.dart';
 
